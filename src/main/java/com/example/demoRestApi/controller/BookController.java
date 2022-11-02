@@ -13,6 +13,7 @@ import java.util.List;
 @RequestMapping("/bookdata/v1")
 public class BookController {
     private BookService bookService;
+
     @Autowired
     public BookController(BookService bookService){
         this.bookService = bookService;
