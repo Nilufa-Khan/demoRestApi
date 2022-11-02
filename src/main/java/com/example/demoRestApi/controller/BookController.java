@@ -18,11 +18,13 @@ public class BookController {
     public BookController(BookService bookService){
         this.bookService = bookService;
     }
+
     @PostMapping("/book")
     public ResponseEntity<?> saveBook(@RequestBody Book book){
         Book book1 = bookService.saveBook(book);
         return new ResponseEntity<>(book1, HttpStatus.CREATED);
     }
+
     @GetMapping("/books")
     public ResponseEntity<?> getAllBook(){
         List list = bookService.getAllBook();
